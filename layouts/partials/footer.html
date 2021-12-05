@@ -41,49 +41,28 @@
             {{ end }}{{ end }}
 
         </div>
-        <!-- /.col-md-4 -->
-
-        {{ if isset .Site.Params "address" }}
+        
         <div class="col-md-4 col-sm-6">
 
-          <h4>{{ i18n "contactTitle" }}</h4>
+        {{ if isset .Site.Params "copyright" }}
+            <div >
+                <h4>copyright</h4>
 
-            {{ .Site.Params.address | safeHTML }}
+                <p>{{ .Site.Params.copyright | safeHTML }}</p>
 
-            <a href="{{ default "/contact" .Site.Params.contact_url }}" class="btn btn-small btn-template-main">{{ i18n "contactGoTo" }}</a>
+                <p>
+                {{ i18n "templateBy" | markdownify }} <a href="https://bootstrapious.com/p/universal-business-e-commerce-template">Bootstrapious</a>.
+                <!-- Not removing this link is part of the licence conditions of the template. Thanks for understanding :) -->
+                </p>
+                <p>
+                {{ i18n "portedBy" | markdownify }} <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
+                </p>
+                <hr class="hidden-md hidden-lg hidden-sm">
 
-            <hr class="hidden-md hidden-lg hidden-sm">
-
-        </div>
-        <!-- /.col-md-4 -->
+            </div>
         {{ end }}
+        </div>
 
     </div>
     <!-- /.container -->
 </footer>
-
-<!-- /#footer -->
-
-<!-- *** FOOTER END *** -->
-
-<!-- *** COPYRIGHT ***
-_________________________________________________________ -->
-
-<div id="copyright">
-    <div class="container">
-        <div class="col-md-12">
-            {{ if isset .Site.Params "copyright" }}
-            <p class="pull-left">{{ .Site.Params.copyright | safeHTML }}</p>
-            {{ end }}
-            <p class="pull-right">
-              {{ i18n "templateBy" | markdownify }} <a href="https://bootstrapious.com/p/universal-business-e-commerce-template">Bootstrapious</a>.
-              <!-- Not removing this link is part of the licence conditions of the template. Thanks for understanding :) -->
-
-              {{ i18n "portedBy" | markdownify }} <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
-            </p>
-        </div>
-    </div>
-</div>
-<!-- /#copyright -->
-
-<!-- *** COPYRIGHT END *** -->
