@@ -71,7 +71,7 @@
   translation: "op"
 
 - id: 404Error
-  translation: "Fout 404: Pagina niet gevonden"
+  translation: "Fout: pagina niet gevonden"
 
 - id: 404Message
   translation: "Het spijt ons – deze pagina is er niet meer"
@@ -80,37 +80,37 @@
   translation: "Ga naar de homepage"
 
 - id: January
-  translation: January
+  translation: januari
 
 - id: February
-  translation: February
+  translation: februari
 
 - id: March
-  translation: March
+  translation: maart
 
 - id: April
-  translation: April
+  translation: april
 
 - id: May
-  translation: May
+  translation: mei
 
 - id: June
-  translation: June
+  translation: juni
 
 - id: July
-  translation: July
+  translation: juli
 
 - id: August
-  translation: August
+  translation: augustus
 
 - id: September
-  translation: September
+  translation: september
 
 - id: October
-  translation: October
+  translation: october
 
 - id: November
-  translation: November
+  translation: november
 
 - id: December
-  translation: December
+  translation: december
