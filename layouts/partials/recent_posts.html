@@ -15,16 +15,19 @@
             <!-- *** BLOG HOMEPAGE *** -->
 
             <div class="row">
+                <!-- .Pages.ByDate orders content according to the "date" field in front matter -->
+                <!-- .Pages.ByLastmod orders content according to the "lastmod" field in front matter -->
                 {{ $posts := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-                {{ range first 4 $posts.Pages }}
+                {{ range first 4 $posts.Pages.ByDate  }}
+
                 <div class="col-md-3 col-sm-6">
                     <div class="box-image-text blog">
                         <div class="top">
                             <div class="image" style="overflow:hidden">
                                 {{ if isset .Params "banner" }}
-                                <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="" >
+                                <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="banner" >
                                 {{ else }}
-                                <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="">
+                                <img src="{{ "img/content/banner-default.jpg" | relURL }}" class="img-responsive" alt="banner">
                                 {{ end }}
                             </div>
                             <div class="bg"></div>
