@@ -22,8 +22,9 @@
 
                 <div class="col-md-3 col-sm-6">
                     <div class="box-image-text blog">
+
+                        <a href="{{ .Permalink }}">
                         <div class="top">
-                            <a href="{{ .Permalink }}">
                             <div class="image" style="overflow:hidden">
                                 {{ if isset .Params "banner" }}
                                 <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="banner" >
@@ -37,8 +38,8 @@
                                     <a href="{{ .Permalink }}" class="btn btn-template-transparent-primary"><i class="fas fa-link"></i> {{ i18n "readMore" }}</a>
                                 </p>
                             </div>
-                            </a>
                         </div>
+                        </a>
 
                         <div class="content">
                             <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
