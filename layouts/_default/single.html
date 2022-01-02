@@ -24,11 +24,14 @@
                     <div class="col-md-9" id="blog-post">
 
                         {{ if or .Params.author .Params.date }}
-                          <p class="text-muted text-uppercase mb-small text-right">
+                          <p id="metadata-author-date" class="text-muted text-uppercase mb-small text-right">
                             {{ if isset .Params "authors" }}
-			      {{ i18n "authorBy" }} {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<a href="{{ (printf "%s/%s" ("authors" | relLangURL) ($author | urlize)) }}">{{ $author }}</a>{{ end }}
+			                        {{ i18n "authorBy" }} 
+                              {{ range $index, $author := .Params.authors }}
+                                {{ if $index }}, {{ end }}
+                                <a href="{{ (printf "%s/%s" ("authors" | relLangURL) ($author | urlize)) }}">{{ $author }}</a>{{ end }}
                             {{ end }}
-                            {{ if and .Params.author .Params.date }} | {{ end }}
+                            {{ if and .Params.authors .Params.date }} | {{ end }}
                             {{ if .Params.date }}
                               {{ $createdAt := .Date.Format .Site.Params.date_format }}
                               {{ range $index, $month := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
@@ -40,7 +43,25 @@
                         {{ end }}
 
                         <div id="singe-page-content">
-                          {{ .Content }}
+                          <article>
+                            <figure class="article-figure">
+                                <picture class="article-picture">
+                                  <source srcset="{{ .Params.banner | relURL }}" type="image/jpeg">
+                                  <img 
+                                    alt="Illustratiebeeld" 
+                                    loading="lazy" 
+                                    src="{{ .Params.banner | relURL }}" 
+                                    class="article-image"
+                                  >
+                                </picture>
+                              <figcaption class="figcaption">Illustratiebeeld van <span class = "image-attribution">
+                                {{ .Params.banner_author }}  via <a href="{{ .Params.banner_site_url }}">{{ .Params.banner_site_title }}</a>
+                                </span>
+                              </figcaption>
+                            </figure>
+
+                            {{ .Content }}
+                          </article>
                         </div>
                         <!-- /#post-content -->
                         {{ if .Site.DisqusShortname }}
