@@ -1,0 +1,29 @@
+<div id="collection-navigation">
+  <h3 class="panel-title collection-navigation-title">{{ .Params.collection_navigation_title }}</h3>
+  <div class="collection-navigation-actions">
+    <div class="cn-item vorig">
+      {{ if isset .Params "collection_navigation_vorige_url" }}
+      <a href='{{ .Params.collection_navigation_vorige_url }}'>
+        Vorig Artikel ← 
+      </a>
+      {{ else }} 
+      <a href="#!">Vorig Artikel ← </a>
+      {{ end }}
+    </div>
+
+    <div class="cn-item collectie">
+      {{ if isset .Params "collection_navigation_url" }}
+      <a href='{{ .Params.collection_navigation_url }}'>Alles in deze Collectie 🔎 </a>
+      {{ end }}
+    </div>
+
+    
+    <div class="cn-item volgende">
+      {{ if isset .Params "collection_navigation_volgende_url" }}
+      <a href='{{ .Params.collection_navigation_volgende_url }}'>Volgend Artikel →</a>
+      {{ else }}
+      <a href="#!">Volgend Artikel →</a>
+      {{ end }}
+    </div>
+  <div>
+</div>

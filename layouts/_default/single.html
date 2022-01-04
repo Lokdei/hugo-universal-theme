@@ -62,6 +62,19 @@
 
                             {{ .Content }}
                           </article>
+
+                          {{ if .Params.collection_navigation_title }}
+                          <section>
+                            {{ partial "collection_navigation.html" . }}
+                          </section>
+                          {{ end }}
+
+                          {{ if .Params.categories }}
+                          <section>
+                            {{ partial "widgets/article_categories.html" . }}
+                          </section>
+                          {{ end }}
+
                         </div>
                         <!-- /#post-content -->
                         {{ if .Site.DisqusShortname }}
