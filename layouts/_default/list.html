@@ -30,12 +30,12 @@
                         <section class="post">
                             <div class="row">
                                 <div class="col-md-4">
-                                  <div class="image">
+                                  <div>
                                       <a href="{{ .Permalink }}">
                                           {{ if .Params.banner }}
-                                          <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="">
+                                          <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="{{ .Title }}">
                                           {{ else }}
-                                          <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="">
+                                          <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="{{ .Title }}">
                                           {{ end }}
                                       </a>
                                   </div>
